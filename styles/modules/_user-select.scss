@@ -1,0 +1,7 @@
+/*-------------------------
+## User Select
+---------------------------*/
+
+@mixin user-select-none {
+	@include prefix(user-select, none, webkit moz ms);
+}
