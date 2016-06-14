@@ -1,0 +1,41 @@
+/*-------------------------
+## Borders
+---------------------------*/
+
+@mixin border-radius-custom($top-left, $top-right, $bottom-right, $bottom-left) {
+  @include prefix(border-top-left-radius, $top-left, moz);
+  @include prefix(border-top-right-radius, $top-right, moz);
+  @include prefix(border-bottom-right-radius, $bottom-right, moz);
+  @include prefix(border-bottom-left-radius, $bottom-left, moz);
+  // For preventing the background color to spread outside the border. 
+  background-clip: padding-box;
+}
+
+@mixin border-radius($rad) {
+  @include prefix(border-radius, $rad, moz);
+  background-clip: padding-box;
+}
+
+@mixin border-top-radius($rad) {
+  @include prefix(border-top-right-radius, $rad, moz);
+  @include prefix(border-top-left-radius, $rad, moz);
+  background-clip: padding-box;
+}
+
+@mixin border-right-radius($rad) {
+  @include prefix(border-bottom-right-radius, $rad, moz);
+  @include prefix(border-top-right-radius, $rad, moz);
+  background-clip: padding-box;
+}
+
+@mixin border-bottom-radius($rad) {
+  @include prefix(border-bottom-right-radius, $rad, moz);
+  @include prefix(border-bottom-left-radius, $rad, moz);
+  background-clip: padding-box;
+}
+
+@mixin border-left-radius($rad) {
+  @include prefix(border-bottom-left-radius, $rad, moz);
+  @include prefix(border-top-left-radius, $rad, moz);
+  background-clip: padding-box;
+}

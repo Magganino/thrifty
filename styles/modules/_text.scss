@@ -1,0 +1,26 @@
+/*-------------------------
+## Fonts & Text
+---------------------------*/
+
+@mixin text-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: remCalc($size);
+}
+
+@mixin line-height($height) {
+  line-height: $height;
+  line-height: remCalc($height);
+}
+
+// Truncate text thats too long
+@mixin text-cut {
+  overflow: hidden;
+  @include prefix(text-overflow, ellipsis, ms o);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

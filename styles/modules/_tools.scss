@@ -1,0 +1,24 @@
+/*-------------------------
+## Tools
+---------------------------*/
+
+$browser-context: 16px;
+
+@function remCalc($size, $context: $browser-context) {
+  $remSize: $size / $context;
+  @return $remSize * 1rem;
+}
+
+@function emCalc($size, $context: $browser-context) {
+  $emSize: $size / $context;
+  @return $emSize * 1em;
+}
+
+@mixin prefix($prop, $value, $vendors: webkit moz ms o) {
+  @if $vendors {
+    @each $vendor in $vendors {
+      #{'-' + $vendor + '-' + $prop}: #{$value};
+    }
+  }
+  #{$prop}: #{$value};
+}

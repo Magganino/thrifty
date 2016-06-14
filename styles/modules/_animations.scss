@@ -1,0 +1,45 @@
+/*-------------------------
+## Animations
+---------------------------*/
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }  
+  @-ms-keyframes $animation-name {
+    @content;
+  }
+  @-o-keyframes $animation-name {
+    @content;
+  }  
+  @keyframes $animation-name {
+    @content;
+  }
+}
+
+@mixin animation($animation-params) {
+  @include prefix(animation, #{$animation-params}, webkit moz);
+}
+
+@mixin animation-delay($delay) {
+  @include prefix(animation-delay, $delay, webkit moz);
+}
+
+@mixin animation-duration($duration) {
+  @include prefix(animation-duration, $duration, webkit moz);
+}
+
+@mixin animation-direction($direction) {
+  @include prefix(animation-direction, $direction, webkit moz);
+}
+
+@mixin animation-iteration-count($iterations) {
+  @include prefix(animation-iteration-count, $iterations, webkit moz);
+}
+
+@mixin animation-timing-function($duration) {
+  @include prefix(animation-timing-function, $duration, webkit moz);
+}

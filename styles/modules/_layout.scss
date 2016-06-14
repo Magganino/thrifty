@@ -1,0 +1,64 @@
+/*-------------------------
+## Layout and positioning
+---------------------------*/
+
+@mixin clearfix() {
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Requires max-width and/or width on the parent element to be set
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// Requires the parent container to have the display:flex and 
+// a set height
+@mixin flexbox-center-ver-hor {
+  @include prefix(flex-direction, column, webkit);
+  @include prefix(justify-content, center, webkit);
+  @include prefix(align-items, center, webkit);
+}
+
+@mixin flexbox-center-ver {
+  @include prefix(align-items, center, webkit);
+}
+
+@mixin position($position, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin absolute-position($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin fixed-position($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: fixed;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

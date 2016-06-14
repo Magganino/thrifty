@@ -1,0 +1,23 @@
+/*-------------------------
+## Transitions
+---------------------------*/
+
+@mixin transition($params) {
+  @include prefix(transition, #{$params}, webkit moz);
+}
+
+@mixin transition-delay($delay) {
+  @include prefix(transition-delay, $delay, webkit moz);
+}
+
+@mixin transition-duration($duration) {
+  @include prefix(transition-duration, $duration, webkit moz);
+}
+
+@mixin transition-property($property) {
+  @include prefix(transition-property, $property, webkit moz);
+}
+
+@mixin transition-timing-function($duration) {
+  @include prefix(transition-timing-function, $duration, webkit moz);
+}

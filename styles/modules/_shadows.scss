@@ -1,0 +1,14 @@
+/*-------------------------
+## Shadows
+---------------------------*/ 
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+  @include prefix(box-shadow, $top $left $blur $color #{$inset}, webkit moz);
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  //Opactity for IE8 down to IE5
+  $opacity-for-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-for-ie); 
+}

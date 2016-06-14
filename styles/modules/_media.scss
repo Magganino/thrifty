@@ -1,0 +1,30 @@
+/*-------------------------
+## Media Queries
+---------------------------*/
+
+$break-large: 1420px;
+$break-medium: 1200px;
+$break-small: 760px;
+$break-x-small: 420px;
+
+@mixin breakpoint-custom($max-width) {
+  @media only screen and (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin breakpoint-large {
+  @include breakpoint-custom($break-large);
+}
+
+@mixin breakpoint-medium {
+  @include breakpoint-custom($break-medium);
+}
+
+@mixin breakpoint-small {
+  @include breakpoint-custom($break-small);
+}
+
+@mixin breakpoint-x-small {
+  @include breakpoint-custom($break-x-small);
+}
