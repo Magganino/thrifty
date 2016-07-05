@@ -2,8 +2,8 @@
 ## Shadows
 ---------------------------*/ 
 
-@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
-  @include prefix(box-shadow, $top $left $blur $color #{$inset}, webkit moz);
+@mixin box-shadow($params...) {
+  @include prefix(box-shadow, #{$params}, webkit moz);
 }
 
 @mixin opacity($opacity) {
